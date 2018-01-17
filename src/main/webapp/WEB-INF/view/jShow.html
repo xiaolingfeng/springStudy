@@ -2,9 +2,158 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JShow</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jshow</title>
+    <link rel="stylesheet" href="jshow.css">
+    <style>
+        *{margin:0;padding:0;font-family:Arial,"Microsoft YaHei UI";font-size:16px;line-height:1.6;}
+        ul,ol,li{list-style: none;display: block}
+        .user{padding:10px;border-bottom:1px solid #d1d2d4}
+        .user-a{display:flex}
+        .user-img{height:60px;width:60px;margin:10px;border-radius: 50%;
+            -webkit-background-size:cover;
+            background-size:cover;background-position: center;}
+        .user-info{flex:1;font-size:20px;line-height:80px;padding:16px 20px 0 10px;}
+        .user-like{width:80px;height:80px;text-align: center;}
+        .user-like .btn-block{margin-top:30px;font-size:12px;min-width:30px;padding:0 10px;color: #3ccc48  }
+
+
+        /*content*/
+        .content{padding:12px;}
+        .content-word{padding-bottom:20px;}
+        .content-word h2{font-size:20px;font-weight:700;margin-bottom:10px;}
+        .content-word p{text-indent:2em;}
+        .content-imgs{display:block;padding:10px 0;border-top:.5px solid #d1d2d4}
+        .content-imgs:after{content:"";display: block;height:0;width:0;clear:both}
+        .content-word .content-imgs{border-top:none}
+        .content-img{display: block;max-height:100px;max-width:100%;height:0;width:100%;}
+        .content-img-name{font-size:16px;line-height:1.6;margin-top:10px;}
+        .content-img-name+.content-imgs{margin-top:3px;}
+
+        /*image 1*/
+        .content-imgs-1 .content-img{padding-bottom:56.25%;position: relative}
+        .content-imgs-1 img{display: block;position: absolute;height:100%;width:100%;}
+
+        /*image 2*/
+        .content-imgs-3 .content-img{width:33%;padding-bottom:18.56%;margin-right:1px;float:left;position: relative;margin-bottom:2px;}
+        .content-imgs-3 img{display:block;;position: absolute;height:100%;width:100%;}
+
+
+        /*btns*/
+        .btn-block{height:16px;line-height:17px;width:auto;display: inline-block;border:1px solid #ccc;text-align: center}
+        .btn-block.btn-like{border-color:#3ccc48;}
+        .btn-block.btn-like:before{content:"+"}
+        .btn-block.btn-unlike{}
+        .btn-block.btn-unlike:before{content:"-"}
+
+
+        /*units*/
+        .u-location{padding-left:18px;font-size:14px;background:url(icon_location.png) 1px center no-repeat; background-size:16px;height:18px;display: inline-block}
+
+
+        /*events*/
+        .event{}
+        .event{}
+        .event{}
+        .event{}
+
+
+        /*tab*/
+        .tab{}
+        .tab-index{}
+
+        .tab-content{}
+    </style>
 </head>
 <body>
+<div class="user">
+    <div class="user-a">
+        <div class="user-img" style="background-image:url(demo.jpg)"></div>
+        <div class="user-info">
+            <h2 class="user-name">荒村</h2>
+            <div class="user-id">20180103</div>
+        </div>
+        <div class="user-like">
+            <div class="btn-block btn-like">关注</div>
+            <!--<div class="btn-block btn-unlike">取消关注</div>-->
+        </div>
+    </div>
+    <div class="user-b">
+        <div class="user-location u-location">
+            上海 浦东新区
+        </div>
+    </div>
+</div>
+<div class="content">
+    <article class="content-word">
+        <h2 class="contet-word-title">这是个标题</h2>
+        <p>font 简写属性在一个声明中设置所有字体属性。</p>
+        <p>注释：此属性也有第六个值："line-height"，可设置行间距可设置行间距.可设置行间距可设置行间距可设置行间距.可设置行间距.可设置行间距.可设置行间距可设置行间距可设置行间距.v</p>
+        <p>font 简写属性在一个声明中设置所有字体属性。</p>
+        <h3 class="content-img-name">这是图片标题</h3>
+        <ul class="content-imgs content-imgs-1">
+            <li class="content-img">
+                <!--图片规格  16：9-->
+                <img src="demo2.jpg" alt="这是图片标题">
+            </li>
+        </ul>
+        <p>font 简写属性在一个声明中设置所有字体属性。</p>
+    </article>
 
+    <!--图集1-->
+    <h3 class="content-img-name">这是图片标题</h3>
+    <ul class="content-imgs content-imgs-1">
+        <li class="content-img">
+            <!--图片规格  16：9-->
+            <img src="demo.jpg" alt="这是图片标题">
+        </li>
+    </ul>
+
+    <h3 class="content-img-name">这是图片标题</h3>
+    <ul class="content-imgs content-imgs-3">
+        <li class="content-img">
+            <!--图片规格  16：9-->
+            <img src="demo.jpg" alt="这是图片标题">
+        </li>
+        <li class="content-img">
+            <!--图片规格  16：9-->
+            <img src="demo.jpg" alt="这是图片标题">
+        </li>
+        <li class="content-img">
+            <!--图片规格  16：9-->
+            <img src="demo2.jpg" alt="这是图片标题">
+        </li>
+        <li class="content-img">
+            <!--图片规格  16：9-->
+            <img src="demo2.jpg" alt="这是图片标题">
+        </li>
+        <li class="content-img">
+            <!--图片规格  16：9-->
+            <img src="demo.jpg" alt="这是图片标题">
+        </li>
+        <li class="content-img">
+            <!--图片规格  16：9-->
+            <img src="demo.jpg" alt="这是图片标题">
+        </li>
+    </ul>
+</div>
+<div class="event">
+    <ul class="tab-index" for="tabContent">
+        <li class="tab-index-item" for="1">转发</li>
+        <li class="tab-index-item" for="2">评论</li>
+        <li class="tab-index-item" for="3">赞</li>
+    </ul>
+    <ul class="tab-content event-list" id="tabContent">
+        <li data-id="1">
+            <div class="share-block">
+                <div class="share-block-img"></div>
+                <div class="share-block-name"></div>
+                <div class="share-block-message"></div>
+            </div>
+        </li>
+        <li data-id="2"></li>
+        <li data-id="3"></li>
+    </ul>
+</div>
 </body>
 </html>
