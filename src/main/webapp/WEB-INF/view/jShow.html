@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="jshow.css">
     <style>
         *{margin:0;padding:0;font-family:Arial,"Microsoft YaHei UI";font-size:16px;line-height:1.6;}
+        a{text-decoration: none}
         ul,ol,li{list-style: none;display: block}
         .user{padding:10px;border-bottom:1px solid #d1d2d4}
         .user-a{display:flex}
@@ -46,23 +47,43 @@
         .btn-block.btn-unlike{}
         .btn-block.btn-unlike:before{content:"-"}
 
-
         /*units*/
         .u-location{padding-left:18px;font-size:14px;background:url(icon_location.png) 1px center no-repeat; background-size:16px;height:18px;display: inline-block}
 
-
-        /*events*/
-        .event{}
-        .event{}
-        .event{}
-        .event{}
-
-
         /*tab*/
         .tab{}
-        .tab-index{}
+        .tab-index{height:40px;background-color:#fafafa}
+        .tab-index-wrap{display: flex;height:100%;}
+        .tab-index-item{flex:1;text-align: center;height:100%;line-height:40px;font-weight:700;box-sizing: border-box}
+        .tab-index-item:last-of-type{border-right:none}
+        .tab-index-item.current{color:#f00;border-bottom:1px solid #f00}
+        .tab-index-activeBar{
+            width:0;
+            height:1px;background-color:#3ccc48;
+            transform:translate(-1px,0);
+        }
 
-        .tab-content{}
+        .tab-content{width:100%;overflow-x:hidden;}
+        .tab-content>ul>li{display: none;box-sizing: border-box;padding:0 10px;}
+        .tab-content>ul>li.current{display: block}
+        /*.tab-content>ul>li:first-of-type{display:block}*/
+        /*load more*/
+        .loadMore{display: block;margin:30px;border:1px solid #f66;color:#f66;text-align: center;height:30px;line-height:31px;border-radius:5px;font-size:14px;}
+
+
+        .userItem{display: flex;margin:10px 0;}
+        .userItem-img{width:40px;height:40px;border-radius: 50%;overflow: hidden;margin-right:10px;}
+        .userItem-img>img{display: block;height:100%;width:100%;}
+        .userItem-info{flex:1;}
+        .userItem-name{font-size:14px;color:#333;}
+        .userItem-message{font-size:12px;color:#666}
+
+        /*share*/
+        .event-share{}
+
+        /*praise */
+        .event-praise .userItem-name{margin-top:10px;font-size:16px;}
+
     </style>
 </head>
 <body>
@@ -138,22 +159,158 @@
     </ul>
 </div>
 <div class="event">
-    <ul class="tab-index" for="tabContent">
-        <li class="tab-index-item" for="1">转发</li>
-        <li class="tab-index-item" for="2">评论</li>
-        <li class="tab-index-item" for="3">赞</li>
-    </ul>
-    <ul class="tab-content event-list" id="tabContent">
-        <li data-id="1">
-            <div class="share-block">
-                <div class="share-block-img"></div>
-                <div class="share-block-name"></div>
-                <div class="share-block-message"></div>
-            </div>
-        </li>
-        <li data-id="2"></li>
-        <li data-id="3"></li>
-    </ul>
+    <div class="tab-index" for="#tabContent">
+       <div class="tab-index-wrap">
+           <div class="tab-index-item" for="1">转发</div>
+           <div class="tab-index-item" for="2">评论</div>
+           <div class="tab-index-item" for="3">赞</div>
+       </div>
+        <div class="tab-index-activeBar"></div>
+    </div>
+    <div class="tab-content event-list" id="tabContent">
+        <ul>
+            <li data-tab-id="1">
+                <div class="event-share">
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <div class="loadMore">加载更多</div>
+                </div>
+            </li>
+            <li data-tab-id="2">
+                <div class="event-comment">
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                            <div class="userItem-message">巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <div class="loadMore">加载更多</div>
+                </div>
+            </li>
+            <li data-tab-id="3">
+                <div class="event-praise">
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                        </div>
+                    </a>
+                    <a href="#" class="userItem">
+                        <div class="userItem-img">
+                            <img src="demo.jpg" alt="">
+                        </div>
+                        <div class="userItem-info">
+                            <div class="userItem-name">巴拉巴拉</div>
+                        </div>
+                    </a>
+
+                    <div class="loadMore">加载更多</div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
+<script src="jquery.js"></script>
+<script>
+    $.fn.buildTab = function(){
+        var $index = $(this);
+        var $indexs = $index.find(".tab-index-item");
+        var $target = $($index.attr("for")).eq(0);
+        var $contents = $target.find("*[data-tab-id]");
+        $contents.eq(0).addClass("current");
+        $indexs.eq(0).addClass("current");
+        $indexs.on("click",function(){
+            $indexs.removeClass("current");
+            $(this).addClass("current");
+            var id = $(this).attr("for");
+            console.log(id);
+            $contents.removeClass("current");
+            $contents.filter("*[data-tab-id="+ id +"]").addClass("current");
+        })
+    };
+    $(".tab-index").buildTab();
+</script>
 </body>
 </html>
